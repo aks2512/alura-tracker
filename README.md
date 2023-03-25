@@ -1,24 +1,16 @@
-# alura-tracker
+# Alura Tracker
 
-## Project setup
-```
-npm install
-```
+Esse é um projeto desenvolvido  durante o curso da alura Vue3: explorando o framework, que passa toda base introdutória do vue e suas funcionalidades.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+<img src="./screenshot.png" alt="Screenshot da pagina do Alura Tracker"/>
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Link do Projeto
+[Para acessar o link do projeto clique aqui](https://alura-tracker-teal-ten.vercel.app/)
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Tecnologias Utilizadas
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+-Vue3
+
+## Instalação 
+
+- Utilize o `npm install` para instalar as dependências do projeto

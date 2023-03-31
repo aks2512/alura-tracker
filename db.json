@@ -1,0 +1,51 @@
+{
+  "projetos": [
+    {
+      "id": 1,
+      "nome": "Alura Tracker 3"
+    },
+    {
+      "nome": "sadasdasf",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "nome": "asdas"
+    }
+  ],
+  "tarefas": [
+    {
+      "id": 1,
+      "duracaoEmSegundos": 120,
+      "descricao": "Configuração do ambiente",
+      "projeto": {
+        "id": 1,
+        "nome": "Alura Tracker"
+      }
+    },
+    {
+      "duracaoEmSegundos": 1,
+      "descricao": "saddss",
+      "id": 2
+    },
+    {
+      "duracaoEmSegundos": 0,
+      "descricao": "dasdasdasd",
+      "id": 3
+    },
+    {
+      "duracaoEmSegundos": 0,
+      "descricao": {
+        "__v_isShallow": false,
+        "dep": {
+          "w": 0,
+          "n": 0
+        },
+        "__v_isRef": true,
+        "_rawValue": "sadasdasdasdad",
+        "_value": "sadasdasdasdad"
+      },
+      "id": 4
+    }
+  ]
+}

@@ -1,44 +1,41 @@
 import { INotificao } from '@/interfaces/INotificacao';
-import IProjeto from '@/interfaces/IProjeto';
 import { InjectionKey } from 'vue';
 import { createStore, Store, useStore as vuexUseStore } from 'vuex';
-import { ADICIONA_PROJETO, ALTERA_PROJETO, EXCLUIR_PROJETO, NOTIFICAR } from './tipo-mutacoes';
+import { NOTIFICAR } from './tipo-mutacoes';
+import { EstadoProjeto, projeto } from './modulos/projeto';
+import { EstadoTarefa, tarefa } from './modulos/tarefa';
 
-interface Estado {
-  projetos: IProjeto[],
-  notificacoes: INotificao[]
+export interface Estado {
+  notificacoes: INotificao[],
+  tarefa: EstadoTarefa,
+  projeto: EstadoProjeto
 }
 
 export const key: InjectionKey<Store<Estado>> = Symbol()
 
 export const store = createStore<Estado>({
   state: {
-    projetos: [],
-    notificacoes: []
+    notificacoes: [],
+    projeto: {
+      projetos: []
+    },
+    tarefa: {
+      tarefas: []
+    }
   },
   mutations: {
-    [ADICIONA_PROJETO](state ,nomeDoProjeto: string) {
-      const projeto = {
-        id: new Date().toISOString(),
-        nome: nomeDoProjeto
-      } as IProjeto
-      state.projetos.push(projeto)
-    },
-    [ALTERA_PROJETO](state ,projetoAlterado: IProjeto) {
-      const index = state.projetos.findIndex(projeto => projeto.id === projetoAlterado.id)
-      state.projetos[index] = projetoAlterado;
-    },
-    [EXCLUIR_PROJETO](state ,id: string) {
-      state.projetos = state.projetos.filter(projeto => projeto.id !== id)
-    },
     [NOTIFICAR](state ,novaNotificacao: INotificao) {
       novaNotificacao.id = new Date().getTime();
       state.notificacoes.push(novaNotificacao);
-
+      
       setTimeout(() => {
         state.notificacoes = state.notificacoes.filter(notificacao => notificacao.id != novaNotificacao.id);
       }, 3000)
     }
+  },
+  modules: {
+    projeto,
+    tarefa
   }
 });
 

@@ -12,5 +12,9 @@ Esse é um projeto desenvolvido  durante o curso da alura Vue3: explorando o fra
 -Vue3
 
 ## Instalação 
-
+- Precisara instalar global mente o json server `npm install -g json-server`
 - Utilize o `npm install` para instalar as dependências do projeto
+
+## Utilização
+- Utilize o comando json-server db.json para rodar o json server
+- Utilize o comando npm run serve para rodar o projeto
